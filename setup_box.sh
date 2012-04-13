@@ -73,7 +73,7 @@ function LAUNCH_BOX ()
     echo "Running with host=$host"
 
     echo -n "Verifying ssh connection to box..."
-    while ssh -o StrictHostKeyChecking=no -q -i id_rsa-$pemkey ubuntu@$host true && test; do echo -n .; sleep 1; done
+    while ssh -o StrictHostKeyChecking=no -q -i $EC2_HOME/id_rsa-$pemkey ubuntu@$host true && test; do echo -n .; sleep 1; done
     echo ""
 
     echo "Sleeping for 3s before accessing server"
